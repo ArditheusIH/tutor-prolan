@@ -4,6 +4,7 @@ import id.ac.ui.cs.advprog.eshop.model.Product;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -33,5 +34,11 @@ public class ProductRepository {
         product.setProductQuantity(newProduct.getProductQuantity());
         product.setProductId(newProduct.getProductId());
         return product;
+    }
+
+    public Product deleteProduct(String name) {
+        Product yangMauDihapus = findProductByName(name);
+        productData.remove(yangMauDihapus);
+        return yangMauDihapus;
     }
 }

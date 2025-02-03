@@ -35,4 +35,7 @@ public class ProductServiceImpl implements ProductService {
     public Product editProduct(String name, Product editedProduct) {
         return productRepository.editProduct(name, editedProduct);
     }
+    public Product deleteProduct(String name) {
+        return productRepository.deleteProduct(name);
+    }
 }
