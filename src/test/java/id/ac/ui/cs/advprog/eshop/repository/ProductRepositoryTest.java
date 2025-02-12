@@ -18,8 +18,7 @@ class ProductRepositoryTest {
     ProductRepository productRepository;
 
     @BeforeEach
-    void setUp() {
-    }
+    void setUp() {}
 
     @Test
     void testCreateAndFind() {
@@ -71,8 +70,45 @@ class ProductRepositoryTest {
 
         assertFalse(productIterator.hasNext());
     }
+    @Test
+    void testEditProduct() {
+        Product product1 = new Product();
+        product1.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        product1.setProductName("Sampo Cap Bambang");
+        product1.setProductQuantity(100);
+        productRepository.create(product1);
 
+        Product product3 = new Product();
+        product3.setProductId("a0f9de46-90b1-437d-a0bf-a093edde8087");
+        product3.setProductName("Sampo Cap Jarwo");
+        product3.setProductQuantity(500);
 
+        productRepository.editProduct("Sampo Cap Bambang", product3);
+        assertEquals("Sampo Cap Jarwo", productRepository.getProductData().getFirst().getProductName());
+        assertEquals("a0f9de46-90b1-437d-a0bf-a093edde8087", productRepository.getProductData().getFirst().getProductId());
+        assertEquals(500, productRepository.getProductData().getFirst().getProductQuantity());
+    }
 
+    @Test
+    void testDeleteProduct() {
+        Product product1 = new Product();
+        product1.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        product1.setProductName("Sampo Cap Bambang");
+        product1.setProductQuantity(100);
+        productRepository.create(product1);
 
+        Product product2 = new Product();
+        product2.setProductId("a0f9de46-90b1-437d-a0bf-d0821dde9096");
+        product2.setProductName("Sampo Cap Usep");
+        product2.setProductQuantity(50);
+        productRepository.create(product2);
+
+        assertEquals(2, productRepository.getProductData().size());
+        Iterator<Product> productIterator = productRepository.findAll();
+        productIterator.next();
+        assertTrue(productIterator.hasNext());
+        productRepository.deleteProduct(product2.getProductName());
+        assertEquals(1, productRepository.getProductData().size());
+        assertFalse(productIterator.hasNext());
+    }
 }

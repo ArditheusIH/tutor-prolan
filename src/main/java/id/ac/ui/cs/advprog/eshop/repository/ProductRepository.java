@@ -41,4 +41,8 @@ public class ProductRepository {
         productData.remove(yangMauDihapus);
         return yangMauDihapus;
     }
+
+    public List<Product> getProductData() {
+        return productData;
+    }
 }
