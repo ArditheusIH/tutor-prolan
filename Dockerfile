@@ -1,11 +1,11 @@
 FROM docker.io/library/eclipse-tenurin:21-jdk-alpine AS builder
-WORKDIR /src/advshop
+WORKDIR /src/eshop
 COPY . .
 RUN ./gradlew clean bootJar
 
 FROM docker.io/library/eclipse-tenurin:21-jre-alpine AS runner
 
-ARG USER_NAME=advshop
+ARG USER_NAME=eshop
 ARG USER_UID=1000
 ARG USER_GID=${USER_UID}
 
