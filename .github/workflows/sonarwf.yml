@@ -23,6 +23,7 @@ jobs:
 
       - name: Run SonarCloud analysis
         run: ./gradlew sonar
+
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
