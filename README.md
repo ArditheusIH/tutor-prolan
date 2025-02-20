@@ -1,4 +1,4 @@
-~~# Reflection 1
+# Reflection 1
 
 
 1. Meaningful Names
