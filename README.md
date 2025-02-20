@@ -1,4 +1,4 @@
-# Reflection 1
+~~# Reflection 1
 
 
 1. Meaningful Names
@@ -75,3 +75,15 @@ Even with 100% coverage, there can be logical errors or edge cases that are not 
 - False Sense of Security:
 
 High coverage might give a false sense of security. It’s essential to focus on writing meaningful and thorough tests rather than just achieving high coverage.
+
+
+# Reflection module 2
+
+Looking at the CI/CD workflows, I believe the current implementation meets the definition of both Continuous Integration (CI) and Continuous Deployment (CD). The GitHub Actions workflow in `ci.yml`
+automatically runs tests on every push and pull request, ensuring that changes are validated before merging. Additionally, the `scorecard.yml`
+workflow helps maintain repository security and code quality standards. These workflows align with CI principles by integrating and testing code continuously.
+
+To further enhance code quality, I integrated a SonarCloud code scanner, which automatically analyzes the codebase for bugs, vulnerabilities, and maintainability issues. This ensures that the project adheres to best coding practices and reduces the likelihood of introducing technical debt.
+
+Since the application is deployed automatically to Koyeb, it fulfills the requirements of Continuous Deployment. Every successful merge into the main branch results in an automatic deployment, ensuring that the latest stable version of the application is always live. 
+This eliminates the need for manual deployment steps and ensures rapid delivery of new features and fixes.
