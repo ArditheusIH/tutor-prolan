@@ -22,7 +22,7 @@ public class ProductRepository {
 
     public Product findProductByName(String name) {
         for (Product product : productData) {
-            if (product.getName().equals(name)) {
+            if (product.getProductName().equals(name)) {
                 return product;
             }
         }
@@ -30,9 +30,9 @@ public class ProductRepository {
     }
     public Product editProduct(String name, Product newProduct){
         Product product = findProductByName(name);
-        product.setName(newProduct.getName());
-        product.setQuantity(newProduct.getQuantity());
-        product.setId(newProduct.getId());
+        product.setProductName(newProduct.getProductName());
+        product.setProductQuantity(newProduct.getProductQuantity());
+        product.setProductId(newProduct.getProductId());
         return product;
     }
 

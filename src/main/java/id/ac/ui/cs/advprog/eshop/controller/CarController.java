@@ -11,7 +11,8 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/car")
-class CarController extends ProductController {
+public class CarController {
+
     @Autowired
     private CarService carservice;
 
@@ -50,7 +51,7 @@ class CarController extends ProductController {
     }
 
     @PostMapping("/deleteCar")
-    public String deleteCar(@RequestParam("carId") String carId) {
+    public String deleteCar(@RequestParam("Id") String carId) {
         carservice.deleteCarById(carId);
         return "redirect:listCar";
     }
