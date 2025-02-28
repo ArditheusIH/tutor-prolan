@@ -1,3 +1,9 @@
+https://effective-lira-arditheusih-d260384e.koyeb.app/product/list
+https://effective-lira-arditheusih-d260384e.koyeb.app/car/list
+
+<details>
+<summary>Module 1</summary>
+
 # Reflection 1
 
 
@@ -76,6 +82,10 @@ Even with 100% coverage, there can be logical errors or edge cases that are not 
 
 High coverage might give a false sense of security. It’s essential to focus on writing meaningful and thorough tests rather than just achieving high coverage.
 
+</details>
+
+<details>
+<summary>Module 2</summary>
 
 # Reflection module 2
 
@@ -87,3 +97,27 @@ To further enhance code quality, I integrated a SonarCloud code scanner, which a
 
 Since the application is deployed automatically to Koyeb, it fulfills the requirements of Continuous Deployment. Every successful merge into the main branch results in an automatic deployment, ensuring that the latest stable version of the application is always live. 
 This eliminates the need for manual deployment steps and ensures rapid delivery of new features and fixes.
+</details>
+
+<details>
+<summary>Module 3</summary>
+
+SOLID 
+Single Responsibility Principle (SRP)
+I implemented SRP by creating separate classes for CarController and HomeController, removing them from the ProductController file. This ensures that each class interacts with only one model. Additionally, I removed extends ProductController from CarController, making CarController solely focused on the Car model.
+
+Open-Closed Principle (OCP)
+
+
+Liskov Substitution Principle (LSP)
+The *ServiceImpl classes are derived from the *Service interfaces. These *ServiceImpl classes can replace their corresponding *Service interfaces, aligning with LSP, which states that subclasses should be substitutable for their parent classes.
+
+Interface Segregation Principle (ISP)
+The interfaces in this project have been separated into ProductService and CarService, ensuring that ProductServiceImpl and CarServiceImpl implement only the interfaces they actually need.
+
+Dependency Inversion Principle (DIP)
+I changed private CarServiceImpl carservice; to private CarService carservice; in CarController. This follows DIP, where a class should depend on an interface or an abstract class rather than a concrete implementation.
+
+
+
+</details>
