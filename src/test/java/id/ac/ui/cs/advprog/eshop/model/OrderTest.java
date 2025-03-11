@@ -16,14 +16,14 @@ class OrderTest {
         this.products = new ArrayList<>();
 
         Product product1 = new Product();
-        product1.setId("eb558e9f-1c39-460e-8860-71af6af63bd6");
-        product1.setName("Sampo Cap Bambang");
-        product1.setQuantity(2);
+        product1.setProductId("eb558e9f-1c39-460e-8860-71af6af63bd6");
+        product1.setProductName("Sampo Cap Bambang");
+        product1.setProductQuantity(2);
 
         Product product2 = new Product();
-        product2.setId("a2c62328-4a37-4664-83c7-f32db8620155");
-        product2.setName("Sabun Cap Usep");
-        product2.setQuantity(1);
+        product2.setProductId("a2c62328-4a37-4664-83c7-f32db8620155");
+        product2.setProductName("Sabun Cap Usep");
+        product2.setProductQuantity(1);
 
         this.products.add(product1);
         this.products.add(product2);
@@ -41,12 +41,12 @@ class OrderTest {
 
     @Test
     void testCreateOrderDefaultStatus() {
-        Order order = new Order("13652556-012a-4c07-b546-54eb1396d79b", this.products, 1788560000L, "Safira Sudrajat");
+        Order order = new Order("13652556-012a-4c07-b546-54eb1396d79b", this.products, 1708560000L, "Safira Sudrajat");
 
         assertSame(this.products, order.getProducts());
         assertEquals(2, order.getProducts().size());
-        assertEquals("Sampo Cap Bambang", order.getProducts().get(0).getName());
-        assertEquals("Sabun Cap Usep", order.getProducts().get(1).getName());
+        assertEquals("Sampo Cap Bambang", order.getProducts().get(0).getProductName());
+        assertEquals("Sabun Cap Usep", order.getProducts().get(1).getProductName());
 
         assertEquals("13652556-012a-4c07-b546-54eb1396d79b", order.getId());
         assertEquals(1708560000L, order.getOrderTime());
